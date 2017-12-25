@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SensorMonitoringSystemService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:63420/SensorMonitoringSystemService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:63420/SensorMonitoringSystemService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63420/SensorMonitoringSystemService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISensorMonitoringSystemService_FindAllCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindAllCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_UsernameControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:UsernameControl" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_UsernameControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsernameControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUser" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_RegisterUserDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_RegisterUserDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_UserDetailControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserDetailControl" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_UserDetailControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserDetailControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_SendInfoMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendInfoMail" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_SendInfoMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendInfoMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_Activation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Activation" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_Activation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindUserDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserDetail" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindUserDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_ChangeCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCode" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_ChangeCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindCompaniesAllSensors_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompaniesAllSensors" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindCompaniesAllSensors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompaniesAllSensorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_SensorDataControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:SensorDataControl" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_SensorDataControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SensorDataControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindSensor_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSensor" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindSensor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSensorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindAllSensorDatas_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllSensorDatas" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindAllSensorDatas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAllSensorDatasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindDatasBetweenDates_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDatasBetweenDates" />
+  </wsdl:message>
+  <wsdl:message name="ISensorMonitoringSystemService_FindDatasBetweenDates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDatasBetweenDatesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISensorMonitoringSystemService">
+    <wsdl:operation name="FindAllCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindAllCompanies" message="tns:ISensorMonitoringSystemService_FindAllCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindAllCompaniesResponse" message="tns:ISensorMonitoringSystemService_FindAllCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsernameControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/UsernameControl" message="tns:ISensorMonitoringSystemService_UsernameControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/UsernameControlResponse" message="tns:ISensorMonitoringSystemService_UsernameControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/RegisterUser" message="tns:ISensorMonitoringSystemService_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/RegisterUserResponse" message="tns:ISensorMonitoringSystemService_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindUser" message="tns:ISensorMonitoringSystemService_FindUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindUserResponse" message="tns:ISensorMonitoringSystemService_FindUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/RegisterUserDetail" message="tns:ISensorMonitoringSystemService_RegisterUserDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/RegisterUserDetailResponse" message="tns:ISensorMonitoringSystemService_RegisterUserDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDetailControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/UserDetailControl" message="tns:ISensorMonitoringSystemService_UserDetailControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/UserDetailControlResponse" message="tns:ISensorMonitoringSystemService_UserDetailControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInfoMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/SendInfoMail" message="tns:ISensorMonitoringSystemService_SendInfoMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/SendInfoMailResponse" message="tns:ISensorMonitoringSystemService_SendInfoMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/ChangePassword" message="tns:ISensorMonitoringSystemService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/ChangePasswordResponse" message="tns:ISensorMonitoringSystemService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Activation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/Activation" message="tns:ISensorMonitoringSystemService_Activation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/ActivationResponse" message="tns:ISensorMonitoringSystemService_Activation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUserDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindUserDetail" message="tns:ISensorMonitoringSystemService_FindUserDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindUserDetailResponse" message="tns:ISensorMonitoringSystemService_FindUserDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/ChangeCode" message="tns:ISensorMonitoringSystemService_ChangeCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/ChangeCodeResponse" message="tns:ISensorMonitoringSystemService_ChangeCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCompaniesAllSensors">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindCompaniesAllSensors" message="tns:ISensorMonitoringSystemService_FindCompaniesAllSensors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindCompaniesAllSensorsResponse" message="tns:ISensorMonitoringSystemService_FindCompaniesAllSensors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SensorDataControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/SensorDataControl" message="tns:ISensorMonitoringSystemService_SensorDataControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/SensorDataControlResponse" message="tns:ISensorMonitoringSystemService_SensorDataControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSensor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindSensor" message="tns:ISensorMonitoringSystemService_FindSensor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindSensorResponse" message="tns:ISensorMonitoringSystemService_FindSensor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAllSensorDatas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindAllSensorDatas" message="tns:ISensorMonitoringSystemService_FindAllSensorDatas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindAllSensorDatasResponse" message="tns:ISensorMonitoringSystemService_FindAllSensorDatas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDatasBetweenDates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindDatasBetweenDates" message="tns:ISensorMonitoringSystemService_FindDatasBetweenDates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISensorMonitoringSystemService/FindDatasBetweenDatesResponse" message="tns:ISensorMonitoringSystemService_FindDatasBetweenDates_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="SensorMonitoringSystemService" />
+</wsdl:definitions>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63420/SensorMonitoringSystemService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" />
+  <xs:element name="FindAllCompanies">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllCompaniesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindAllCompaniesResult" nillable="true" type="q1:ArrayOfCompanies" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsernameControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsernameControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UsernameControlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="RegisteredUser" nillable="true" type="q2:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindUserResult" nillable="true" type="q3:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="RegisteredUserDetail" nillable="true" type="q4:UsersDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserDetailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserDetailControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserDetailControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserDetailControlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendInfoMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="RegisteredUserDetail" nillable="true" type="q5:UsersDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendInfoMailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="ChangedPasswordUser" nillable="true" type="q6:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Activation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="ActivatedUser" nillable="true" type="q7:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUserDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUserDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindUserDetailResult" nillable="true" type="q8:UsersDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="ChangedCodeUser" nillable="true" type="q9:Users" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeCodeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindCompaniesAllSensors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindCompaniesAllSensorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindCompaniesAllSensorsResult" nillable="true" type="q10:ArrayOfSensors" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SensorDataControl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SensorDataControlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SensorDataControlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindSensor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindSensorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindSensorResult" nillable="true" type="q11:Sensors" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllSensorDatas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAllSensorDatasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindAllSensorDatasResult" nillable="true" type="q12:ArrayOfSensorsDatas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDatasBetweenDates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sensorid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindDatasBetweenDatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SensorMonitoringSystem" minOccurs="0" name="FindDatasBetweenDatesResult" nillable="true" type="q13:ArrayOfSensorsDatas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SensorMonitoringSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="DatasBetweenDates_Result">
+    <Property Name="DataID" Type="Int32" Nullable="false" />
+    <Property Name="SensorID" Type="Int32" Nullable="false" />
+    <Property Name="ReadValue" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ReadValueTime" Type="DateTime" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="CompaniesEntity">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sensors" Relationship="Self.FK__Sensors__Company__1273C1CD" FromRole="Companies" ToRole="Sensors" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Users__CompanyID__15502E78" FromRole="Companies" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="SensorsEntity">
+    <Key>
+      <PropertyRef Name="SensorID" />
+    </Key>
+    <Property Name="SensorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="SensorDescription" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SensorAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GraphicalMinValue" Type="Int32" Nullable="false" />
+    <Property Name="GraphicalMaxValue" Type="Int32" Nullable="false" />
+    <Property Name="LowestCriticalValue" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="HighestCriticalValue" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="SensorUnit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK__Sensors__Company__1273C1CD" FromRole="Sensors" ToRole="Companies" />
+    <NavigationProperty Name="SensorsDatas" Relationship="Self.FK__SensorsDa__Senso__1B0907CE" FromRole="Sensors" ToRole="SensorsDatas" />
+  </EntityType>
+  <EntityType Name="SensorsDatasEntity">
+    <Key>
+      <PropertyRef Name="DataID" />
+    </Key>
+    <Property Name="DataID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SensorID" Type="Int32" Nullable="false" />
+    <Property Name="ReadValue" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ReadValueTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Sensors" Relationship="Self.FK__SensorsDa__Senso__1B0907CE" FromRole="SensorsDatas" ToRole="Sensors" />
+  </EntityType>
+  <EntityType Name="UsersEntity">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActivated" Type="Boolean" Nullable="false" />
+    <Property Name="RegistrationCode" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="Companies" Relationship="Self.FK__Users__CompanyID__15502E78" FromRole="Users" ToRole="Companies" />
+    <NavigationProperty Name="UsersDetails" Relationship="Self.FK__UsersDeta__UserI__182C9B23" FromRole="Users" ToRole="UsersDetails" />
+  </EntityType>
+  <EntityType Name="UsersDetailsEntity">
+    <Key>
+      <PropertyRef Name="DetailID" />
+    </Key>
+    <Property Name="DetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__UsersDeta__UserI__182C9B23" FromRole="UsersDetails" ToRole="Users" />
+  </EntityType>
+  <Association Name="FK__Sensors__Company__1273C1CD">
+    <End Role="Companies" Type="SensorMonitoringSystemModel.CompaniesEntity" Multiplicity="1" />
+    <End Role="Sensors" Type="SensorMonitoringSystemModel.SensorsEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Sensors">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__CompanyID__15502E78">
+    <End Role="Companies" Type="SensorMonitoringSystemModel.CompaniesEntity" Multiplicity="1" />
+    <End Role="Users" Type="SensorMonitoringSystemModel.UsersEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SensorsDa__Senso__1B0907CE">
+    <End Role="Sensors" Type="SensorMonitoringSystemModel.SensorsEntity" Multiplicity="1" />
+    <End Role="SensorsDatas" Type="SensorMonitoringSystemModel.SensorsDatasEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sensors">
+        <PropertyRef Name="SensorID" />
+      </Principal>
+      <Dependent Role="SensorsDatas">
+        <PropertyRef Name="SensorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersDeta__UserI__182C9B23">
+    <End Role="Users" Type="SensorMonitoringSystemModel.UsersEntity" Multiplicity="1" />
+    <End Role="UsersDetails" Type="SensorMonitoringSystemModel.UsersDetailsEntity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UsersDetails">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SensorMonitoringSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="SensorMonitoringSystemModel.CompaniesEntity" />
+    <EntitySet Name="Sensors" EntityType="SensorMonitoringSystemModel.SensorsEntity" />
+    <EntitySet Name="SensorsDatas" EntityType="SensorMonitoringSystemModel.SensorsDatasEntity" />
+    <EntitySet Name="Users" EntityType="SensorMonitoringSystemModel.UsersEntity" />
+    <EntitySet Name="UsersDetails" EntityType="SensorMonitoringSystemModel.UsersDetailsEntity" />
+    <AssociationSet Name="FK__Sensors__Company__1273C1CD" Association="Self.FK__Sensors__Company__1273C1CD">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Sensors" EntitySet="Sensors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__CompanyID__15502E78" Association="Self.FK__Users__CompanyID__15502E78">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SensorsDa__Senso__1B0907CE" Association="Self.FK__SensorsDa__Senso__1B0907CE">
+      <End Role="Sensors" EntitySet="Sensors" />
+      <End Role="SensorsDatas" EntitySet="SensorsDatas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersDeta__UserI__182C9B23" Association="Self.FK__UsersDeta__UserI__182C9B23">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersDetails" EntitySet="UsersDetails" />
+    </AssociationSet>
+    <FunctionImport Name="DatasBetweenDates" IsComposable="true" ReturnType="Collection(SensorMonitoringSystemModel.DatasBetweenDates_Result)">
+      <Parameter Name="SensorID" Mode="In" Type="Int32" />
+      <Parameter Name="Date1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="DataRegistration">
+      <Parameter Name="OkunanDeger" Mode="In" Type="Decimal" />
+      <Parameter Name="OkunanDegerZamani" Mode="In" Type="DateTime" />
+      <Parameter Name="SensorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SensorRegistration">
+      <Parameter Name="KurumID" Mode="In" Type="Int32" />
+      <Parameter Name="SensorTipi" Mode="In" Type="String" />
+      <Parameter Name="SensorAdresi" Mode="In" Type="String" />
+      <Parameter Name="KucukGrafikDegeri" Mode="In" Type="Int32" />
+      <Parameter Name="BuyukGrafikDegeri" Mode="In" Type="Int32" />
+      <Parameter Name="KucukKritikDegeri" Mode="In" Type="Decimal" />
+      <Parameter Name="BuyukKritikDegeri" Mode="In" Type="Decimal" />
+      <Parameter Name="SensorBirimi" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SensorMonitoringSystemModelStoreContainer" CdmEntityContainer="SensorMonitoringSystemEntities">
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="SensorMonitoringSystemModel.CompaniesEntity">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sensors">
+      <EntityTypeMapping TypeName="SensorMonitoringSystemModel.SensorsEntity">
+        <MappingFragment StoreEntitySet="Sensors">
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="SensorDescription" ColumnName="SensorDescription" />
+          <ScalarProperty Name="SensorAddress" ColumnName="SensorAddress" />
+          <ScalarProperty Name="GraphicalMinValue" ColumnName="GraphicalMinValue" />
+          <ScalarProperty Name="GraphicalMaxValue" ColumnName="GraphicalMaxValue" />
+          <ScalarProperty Name="LowestCriticalValue" ColumnName="LowestCriticalValue" />
+          <ScalarProperty Name="HighestCriticalValue" ColumnName="HighestCriticalValue" />
+          <ScalarProperty Name="SensorUnit" ColumnName="SensorUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SensorsDatas">
+      <EntityTypeMapping TypeName="SensorMonitoringSystemModel.SensorsDatasEntity">
+        <MappingFragment StoreEntitySet="SensorsDatas">
+          <ScalarProperty Name="DataID" ColumnName="DataID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="ReadValue" ColumnName="ReadValue" />
+          <ScalarProperty Name="ReadValueTime" ColumnName="ReadValueTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SensorMonitoringSystemModel.UsersEntity">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersDetails">
+      <EntityTypeMapping TypeName="SensorMonitoringSystemModel.UsersDetailsEntity">
+        <MappingFragment StoreEntitySet="UsersDetails">
+          <ScalarProperty Name="DetailID" ColumnName="DetailID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="SensorMonitoringSystemModel.Store.DatasBetweenDates" FunctionImportName="DatasBetweenDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SensorMonitoringSystemModel.DatasBetweenDates_Result">
+          <ScalarProperty Name="DataID" ColumnName="DataID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="ReadValue" ColumnName="ReadValue" />
+          <ScalarProperty Name="ReadValueTime" ColumnName="ReadValueTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DataRegistration" FunctionName="SensorMonitoringSystemModel.Store.DataRegistration" />
+    <FunctionImportMapping FunctionImportName="SensorRegistration" FunctionName="SensorMonitoringSystemModel.Store.SensorRegistration" />
+  </EntityContainerMapping>
+</Mapping>

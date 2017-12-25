@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c43e715afe6401696e16d2573c5d6e7" Name="Diagram1">
+        <EntityTypeShape EntityType="SensorMonitoringSystemModel.CompaniesEntity" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SensorMonitoringSystemModel.SensorsEntity" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SensorMonitoringSystemModel.SensorsDatasEntity" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SensorMonitoringSystemModel.UsersEntity" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SensorMonitoringSystemModel.UsersDetailsEntity" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="SensorMonitoringSystemModel.FK__Sensors__Company__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="SensorMonitoringSystemModel.FK__Users__CompanyID__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="SensorMonitoringSystemModel.FK__SensorsDa__Senso__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="SensorMonitoringSystemModel.FK__UsersDeta__UserI__182C9B23" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

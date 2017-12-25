@@ -1,0 +1,10 @@
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\SensorMonitoringSystem.dll.config
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\SensorMonitoringSystem.dll
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\SensorMonitoringSystem.pdb
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\EntityFramework.dll
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\EntityFramework.SqlServer.dll
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\EntityFramework.xml
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\bin\EntityFramework.SqlServer.xml
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\obj\Debug\SensorMonitoringSystem.csprojResolveAssemblyReference.cache
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\obj\Debug\SensorMonitoringSystem.dll
+D:\SERVİS DENEMELER\SensorMonitoringSystem\SensorMonitoringSystem\obj\Debug\SensorMonitoringSystem.pdb
